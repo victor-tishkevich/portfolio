@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>body { font-family: 'Roboto', sans-serif; }</style>
+</head>
+<body class="bg-[#fdfcff] text-slate-800">
+
+    <nav class="sticky top-0 z-50 bg-[#fdfcff]/90 backdrop-blur-md border-b border-slate-100">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-xl font-medium tracking-tight text-indigo-900">Victor Tishkevich</a>
+            <div class="flex gap-8 text-sm font-medium text-slate-600">
+                <a href="index.html" class="hover:text-indigo-600 transition-colors px-3 py-1">Home</a>
+                <a href="projects.html" class="text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full">Projects</a>
+                <a href="resume.html" class="hover:text-indigo-600 transition-colors px-3 py-1">Resume</a>
+            </div>
+        </div>
+    </nav>
+
+    <article class="max-w-3xl mx-auto px-6 py-16">
+        <div class="w-full h-80 md:h-96 bg-slate-200 rounded-3xl overflow-hidden mb-10">
+            <img src="images/dyno-cad_with_margin.png" class="w-full h-full object-cover">
+        </div>
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-slate-900 mb-4">Small Engine Dynamometer</h1>
+            <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">Fusion360</span>
+                <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">3D Printing</span>
+                <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">Engineering Design</span>
+                <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">Manual Machining</span>
+            </div>
+        </header>
+
+        <div class="prose prose-slate prose-lg text-slate-600 leading-relaxed">
+            <p>
+                This project focuses on designing and building an affordable, portable, and environmentally responsible dynamometer for small displacement engine testing.
+            </p>
+            <p style="margin-top: 1em;">
+                Developed as part of a senior mechanical engineering design course, I collaborated with 4 others to develop a prototype that combines hydraulic loading, real-time data acquisition, and exhaust filtration into a single, compact platform.
+            </p>
+            
+            <h3 class="text-xl font-semibold text-slate-800 mt-8 mb-4">The Challenge</h3>
+            <p>
+                Small displacement engine builders often lack access to dynamometer testing due to the high cost, large footprint, and environmental limitations of existing solutions. Traditional dynos are typically expensive, occupy significant space, and do not include exhaust filtration, making indoor testing difficult or unsafe. This is especially problematic for two-stroke and high-RPM engines, where improper tuning can lead to catastrophic failure within minutes of operation.
+            </p>
+
+            <p style="margin-top: 2em;">
+                The engineering requirements for this problem included:
+            <ul style="margin-top: 1em;" class="list-disc pl-5 space-y-2 mb-6">
+                <li>Safely withstand high RPMs and elevated exhaust temperatures</li>
+                <li>Apply controlled load to the engine for performance measurement</li>
+                <li>Capture accurate torque and horsepower data</li>
+                <li>Filter exhaust gases to environmentally safe levels</li>
+                <li>Remain portable, stable, and manufacturable within a constrained budget</li>
+            </ul>
+            </p>
+
+            <div class="my-8 rounded-2xl overflow-hidden shadow-sm">
+                <img src="images/dyno-final.png" class="w-full">
+            </div>
+
+            <h3 class="text-xl font-semibold text-slate-800 mt-8 mb-4">The Solution</h3>
+            <p>
+                The Green Go-Kart Dyno integrates engine performance measurement with an on-board exhaust filtration system, enabling safer indoor testing without the need for external ventilation.
+            </p>
+            <p style="margin-top: 1em;"> 
+                The solution uses a hydraulic pressure-based dynamometer to apply load to the engine, allowing torque and horsepower to be calculated from pressure, flow rate, and RPM data. Engine speed is measured using a proximity sensor, while pressure data is collected through a hydraulic pressure sensor. An Arduino-based data acquisition system records sensor data in real time and exports it for post-processing and visualization.
+            </p>
+            <p style="margin-top: 1em;">
+                To address environmental and safety concerns, the dyno incorporates a built-in exhaust filtration system. Exhaust gases are routed through snaked ducting, actively cooled with fans, and passed through high-efficiency filters before being released. This design reduces exhaust temperature and pollutant concentration, enabling safer operation in enclosed environments.
+            </p>
+            <h3 class="text-xl font-semibold text-slate-800 mt-8 mb-4">My Role & Contributions</h3>
+            <p>
+                Within our five-member senior design team, I took a leading role in the mechanical design and system integration of the Green Go-Kart Dyno. I was primarily responsible for translating early concepts into manufacturable designs by modeling the prototype and custom components in Fusion 360. This included designing parts to proper tolerances, validating fit and alignment, and ensuring compatibility with purchased hardware prior to fabrication.
+            </p>
+            <p style="margin-top: 1em;">
+                In addition to individual component design, I led the organization and layout of the dyno’s major subassemblies within the cart frame. This required creating a digital twin of the entire prototype in Fusion 360 to ensure all subassemblies fit together correctly prior to fabrication.
+            </p>
+            <p style="margin-top: 2em;">
+                For more information please see the
+                <a href="documents/Report_Dyno.pdf"
+                    class="text-indigo-600 font-medium underline hover:no-underline"
+                    target="_blank" rel="noopener noreferrer">
+                    Project Report
+                </a>
+                    and the
+                <a href="documents/Poster_Dyno.pdf"
+                    class="text-indigo-600 font-medium underline hover:no-underline"
+                    target="_blank" rel="noopener noreferrer">
+                    Project Poster
+                </a>
+            </p>
+        </div>
+        
+        <div class="mt-12 pt-8 border-t border-slate-100">
+            <a href="projects.html" class="text-indigo-600 font-medium hover:underline">&larr; Back to Projects</a>
+        </div>
+    </article>
+
+</body>
+</html>

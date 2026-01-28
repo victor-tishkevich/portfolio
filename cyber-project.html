@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>body { font-family: 'Roboto', sans-serif; }</style>
+</head>
+<body class="bg-[#fdfcff] text-slate-800">
+
+    <nav class="sticky top-0 z-50 bg-[#fdfcff]/90 backdrop-blur-md border-b border-slate-100">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-xl font-medium tracking-tight text-indigo-900">Victor Tishkevich</a>
+            <div class="flex gap-8 text-sm font-medium text-slate-600">
+                <a href="index.html" class="hover:text-indigo-600 transition-colors px-3 py-1">Home</a>
+                <a href="projects.html" class="text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full">Projects</a>
+                <a href="resume.html" class="hover:text-indigo-600 transition-colors px-3 py-1">Resume</a>
+            </div>
+        </div>
+    </nav>
+
+    <article class="max-w-3xl mx-auto px-6 py-16">
+        <div class="w-full h-80 md:h-96 bg-slate-200 rounded-3xl overflow-hidden mb-10">
+            <img src="images/firewall_with_margin.png" class="w-full h-full object-cover">
+        </div>
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-slate-900 mb-4">Cyber Attack Detection Predictor (MQTT)</h1>
+            <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">PySpark</span>
+                <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">SQL</span>
+                <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">PyTorch</span>
+                <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">Kafka</span>
+                <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">GCP</span>
+            </div>
+        </header>
+
+        <div class="prose prose-slate prose-lg text-slate-600 leading-relaxed">
+            <p>
+                This project focuses on designing and deploying a scalable data analytics and machine learning pipeline for cybersecurity traffic analysis using real-world MQTT network data.
+            </p>
+            
+            <h3 class="text-xl font-semibold text-slate-800 mt-8 mb-4">The Challenge</h3>
+            <p>
+                The widespread adoption of IoT systems has made lightweight protocols like MQTT essential for efficient device communication. However, MQTT’s simplicity also exposes IoT networks to security threats such as denial-of-service attacks, unauthorized access, and message flooding. Identifying these attacks is difficult due to the scale and variability of IoT traffic and the subtle nature of malicious behavior. Addressing these challenges requires scalable analytics and machine learning techniques capable of detecting attacks in real-world MQTT network data.
+            </p>
+
+            <div class="my-8 rounded-2xl overflow-hidden shadow-sm">
+                <img src="images/mqtt.png" class="w-full">
+            </div>
+
+            <h3 class="text-xl font-semibold text-slate-800 mt-8 mb-4">The Solution</h3>
+            <p>
+                I designed an end-to-end data pipeline that emphasized scalability, modularity, and reproducibility::
+            </p>
+            <ul class="list-disc pl-5 space-y-2 mb-6">
+                <li><strong>Data Ingestion & Storage:</strong> Both training and testing MQTT datasets were ingested into a PostgreSQL database under a dedicated schema, with explicit labeling to distinguish dataset splits.</li>
+                <li><strong>Distributed Analytics with Spark:</strong> All core analytics were implemented using PySpark, enabling efficient processing of large datasets directly from the database.</li>
+                <li><strong>Publisher/Subscriber Architecture:</strong> Kafka was used to ingest and analyze live YouTube comments related to cybersecurity topics, mapping real-world discussion trends to known attack categories.</li>
+                <li><strong>Machine Learning Modeling:</strong> Multiple classifiers were built and evaluated in both Spark ML and PyTorch, with systematic hyperparameter tuning and performance comparison to identify the most effective models.</li>
+                <li><strong>Cloud Deployment:</strong> The entire workflow was adapted to run in a cloud environment, ensuring the project could scale beyond local hardware limitations and mirror real-world production constraints.</li>
+                
+            </ul>
+            <p>
+                The GitHub repository for this pipeline can be found 
+                <a href="https://github.com/Victor36564/mqtt-attack-prediction-pipeline"
+                    class="text-indigo-600 font-medium underline hover:no-underline"
+                    target="_blank" rel="noopener noreferrer">
+                    here
+                </a>
+            </p>
+        </div>
+        
+        <div class="mt-12 pt-8 border-t border-slate-100">
+            <a href="projects.html" class="text-indigo-600 font-medium hover:underline">&larr; Back to Projects</a>
+        </div>
+    </article>
+
+</body>
+</html>

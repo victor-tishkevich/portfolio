@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>body { font-family: 'Roboto', sans-serif; }</style>
+</head>
+<body class="bg-[#fdfcff] text-slate-800">
+
+    <nav class="sticky top-0 z-50 bg-[#fdfcff]/90 backdrop-blur-md border-b border-slate-100">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-xl font-medium tracking-tight text-indigo-900">Victor Tishkevich</a>
+            <div class="flex gap-8 text-sm font-medium text-slate-600">
+                <a href="index.html" class="hover:text-indigo-600 transition-colors px-3 py-1">Home</a>
+                <a href="projects.html" class="text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full">Projects</a>
+                <a href="resume.html" class="hover:text-indigo-600 transition-colors px-3 py-1">Resume</a>
+            </div>
+        </div>
+    </nav>
+
+    <article class="max-w-3xl mx-auto px-6 py-16">
+        <div class="w-full h-80 md:h-96 bg-slate-200 rounded-3xl overflow-hidden mb-10">
+            <img src="images/artificial-intelligence_with_margin.png" class="w-full h-full object-cover">
+        </div>
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-slate-900 mb-4">On-Device Semantic Spatial Perception</h1>
+            <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">VLMs</span>
+                <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">Point Cloud 3D Reconstruction</span>
+            </div>
+        </header>
+
+        <div class="prose prose-slate prose-lg text-slate-600 leading-relaxed">
+            <p>
+                Currently working on a project that focuses on productionizing the semantic-spatial robotic framework for real-world deployments with natural language-based interaction.
+            </p>
+            
+            <h3 class="text-xl font-semibold text-slate-800 mt-8 mb-4">The Challenge</h3>
+            <p>
+                Today, many robotics projects that incorporate natural language understanding rely heavily on cloud-based API calls to large language models. While these models are powerful, this approach introduces several limitations for real-time robotic systems. Network latency and dependency on a stable internet connection can hinder responsiveness, which is critical for interactive or safety-sensitive applications. Additionally, frequent API usage can become costly over time, making large-scale deployment or long-term experimentation impractical for student projects, research labs, or low-budget systems. These constraints motivate the exploration of locally deployable language models and alternative architectures that better support autonomous robotic behavior.
+            </p>
+
+            <h3 class="text-xl font-semibold text-slate-800 mt-8 mb-4">The Solution</h3>
+            <p>
+                Modernize a framework that allows for direct language comparisons and distill larger models to allow for efficient local deployment.
+            </p>
+        </div>
+        
+        <div class="mt-12 pt-8 border-t border-slate-100">
+            <a href="projects.html" class="text-indigo-600 font-medium hover:underline">&larr; Back to Projects</a>
+        </div>
+    </article>
+
+</body>
+</html>
