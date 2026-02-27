@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>body { font-family: 'Roboto', sans-serif; }</style>
+</head>
+<body class="bg-[#fdfcff] text-slate-800">
+
+    <nav class="sticky top-0 z-50 bg-[#fdfcff]/90 backdrop-blur-md border-b border-slate-100">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-xl font-medium tracking-tight text-indigo-900">Victor Tishkevich</a>
+            <div class="flex gap-8 text-sm font-medium text-slate-600">
+                <a href="index.html" class="hover:text-indigo-600 transition-colors px-3 py-1">Home</a>
+                <a href="projects.html" class="text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full">Projects</a>
+                <a href="resume.html" class="hover:text-indigo-600 transition-colors px-3 py-1">Resume</a>
+            </div>
+        </div>
+    </nav>
+
+    <article class="max-w-3xl mx-auto px-6 py-16">
+        <div class="w-full h-80 md:h-96 bg-slate-200 rounded-3xl overflow-hidden mb-10">
+            <img src="images/ai-agent_with_margin.png" class="w-full h-full object-cover">
+        </div>
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-slate-900 mb-4">Research Paper Query AI Agent</h1>
+            <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">LangChain</span>
+                <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">FastMCP</span>
+                <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">FastAPI</span>
+                <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">Docker</span>
+                <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">Milvus</span>
+                <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">GCP</span>
+            </div>
+        </header>
+
+        <div class="prose prose-slate prose-lg text-slate-600 leading-relaxed">
+            <h3 class="text-xl font-semibold text-slate-800 mt-8 mb-4">Project Overview</h3>
+            <p>
+                This project focuses on building and deploying a multilingual AI research assistant that retrieves domain-specific insights directly from academic papers using a vector database and agent-based orchestration. The system allows users to upload research papers, ask questions in any language, and receive context-aware answers grounded in indexed academic sources.
+            </p>
+            
+            <h3 class="text-xl font-semibold text-slate-800 mt-8 mb-4">The Challenge</h3>
+            <p>
+                Modern large language models are powerful, but they face two major limitations in research settings:
+            </p>
+
+            <ol class="list-decimal mt-4 ml-6 space-y-3">
+                <li><strong>Hallucination Risk</strong> – LLMs can generate plausible but incorrect academic information when not grounded in verified sources.</li>
+                <li><strong>Domain Isolation</strong> – Researchers often need answers strictly based on a curated set of papers, not general internet knowledge.</li>
+                <li><strong>Multilingual Accessibility</strong> – Academic tools are often limited to English, creating barriers for international collaboration.</li>
+                <li><strong>Scalable Deployment</strong> – Research tools must handle document indexing, embeddings, retrieval, translation, and inference across distributed systems without breaking.</li>
+            </ol>
+
+            <p class="mt-4">
+                The challenge was to design a system that could:
+            </p>
+
+            <ul class="list-disc mt-4 ml-6 space-y-2">
+                <li>Retrieve accurate, document-grounded answers from uploaded academic papers</li>
+                <li>Support multilingual queries without corrupting semantic meaning</li>
+                <li>Transparently show which research papers were used</li>
+                <li>Prevent hallucinations through controlled workflow orchestration</li>
+                <li>Deploy reliably in a cloud-native, containerized infrastructure</li>
+            </ul>
+
+            <div class="my-8 rounded-2xl overflow-hidden shadow-sm">
+                <img src="images/ai-agent-framework.png" class="w-full">
+            </div>
+
+            <h3 class="text-xl font-semibold text-slate-800 mt-8 mb-4">The Solution</h3>
+            <p>
+                <strong>Agent-Orchestrated Architecture</strong> - The system uses an LLM as a central orchestration node, built with LangGraph, to manage:
+            </p>
+            <ul class="list-disc mt-4 ml-8 space-y-2">
+                <li>Query understanding</li>
+                <li>Translation routing</li>
+                <li>Vector retrieval from Milvus</li>
+                <li>Response synthesis grounded in retrieved documents</li>
+            </ul>
+
+            <p class="mt-4">
+                <strong>Vector Database for Context Retrieval</strong> - A Milvus vector database stores embeddings for academic papers. When a query is submitted:
+            </p>
+            <ul class="list-disc mt-4 ml-8 space-y-2">
+                <li>The question is embedded</li>
+                <li>Milvus performs semantic similarity search</li>
+                <li>The top relevant documents are retrieved</li>
+                <li>The LLM generates a response grounded strictly in that context</li>
+                <li>The top two relevant papers are displayed alongside the answer</li>
+            </ul>
+
+            <p class="mt-4">
+                <strong>Multilingual Translation Service</strong> - To enable Multilingual queries, I deployed a containerized translation service on GKE that utilized MCP to communicate with the agent.
+            </p>
+
+            <p class="mt-4">
+                <strong>Cloud-Native Deployment on GKE</strong> - The entire system was deployed on Google Kubernetes Engine (GKE) using containerized services:
+            </p>
+            <ul class="list-disc mt-4 ml-8 space-y-2">
+                <li>AI Agent service</li>
+                <li>MCP translation service</li>
+                <li>Streamlit front-end</li>
+                <li>Milvus vector database cluster</li>
+            </ul>
+            
+        </div>
+        
+        <div class="mt-12 pt-8 border-t border-slate-100">
+            <a href="projects.html" class="text-indigo-600 font-medium hover:underline">&larr; Back to Projects</a>
+        </div>
+    </article>
+
+</body>
+
+</html>
